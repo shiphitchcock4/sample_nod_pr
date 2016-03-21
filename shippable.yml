@@ -1,13 +1,15 @@
+
 # Language setting
 language: node_js
 
 # Version number
 node_js:
   - 0.12
+  - 0.10 
 
 build:
   pre_ci_boot:
-    image_name: drydock/u14nod
+    image_name: drydock/u12nod
     image_tag: prod
     pull: true
     options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
@@ -26,4 +28,3 @@ build:
 
   cache_dir_list: 
     - $SHIPPABLE_BUILD_DIR/node_modules
-
